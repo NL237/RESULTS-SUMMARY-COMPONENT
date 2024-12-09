@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+    :root{
+      --Light-red: hsl(0, 100%, 67%);
+      --Orangey-yellow: hsl(39, 100%, 56%);
+      --Green-teal: hsl(166, 100%, 37%);
+      --Cobalt-blue: hsl(234, 85%, 45%);
+      --Light-slate-blue: hsl(252, 100%, 67%);
+      --Light-royal-blue: hsl(241, 81%, 54%);
+      --Violet-blue: hsla(256, 72%, 46%, 1);
+      --Persian-blue: hsla(241, 72%, 46%, 0);
+      --White: hsl(0, 0%, 100%);
+      --Pale-blue: hsl(221, 100%, 96%);
+      --Light-lavender: hsl(241, 100%, 89%);
+      --Dark-gray-blue: hsl(224, 30%, 27%);
+    }
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background-color: var(--Pale-blue);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Hanken Grotesk', sans-serif;
+    }
+    #tab{
+      background-color: var(--White);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: row;
+      max-width: 400px;
+      text-align: center;
+    }
+    /*Partie gauche*/
+    #left{
+      width: 50%;
+      padding: 25px 15px;
+      background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    #left h4{color: var(--Light-lavender); margin-bottom: 15px; font-size: 18px;}
+    #left .circle{
+      background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+      margin-bottom: 10px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    #left .circle h1{font-size: 40px; color: var(--White);} 
+    #left .circle p{font-size: 13px; color: var(--Light-lavender); margin-top: -5px;}
+    #left h2{color: var(--White); margin-bottom: 5px; font-size: larger;}
+    #left .last{color: var(--White); font-size: 13px; font-weight: 200;}
+
+    /*Partie Droite*/
+    #right{
+      padding: 25px 15px;
+    }
+    #right h4{
+      color: var(--Dark-gray-blue);
+      font-size: 18px;
+      text-align: left;
+    }
+    #right .sum{
+      border-radius: 4px; 
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      margin-top: 10px;
+      padding: 6px;
+      gap: 20px;
+    }
+    #right .rea{background-color: hsla(0, 100%, 67%, 0.2);}
+    #right .mem{background-color: hsla(39, 100%, 56%, 0.2);}
+    #right .ver{background-color: hsla(166, 100%, 37%, 0.2);}
+    #right .vis{background-color: hsla(234, 85%, 45%, 0.2);}
+    
+  </style>
+</head>
+<body>
+  <div id="tab">
+    <div id="left">
+
+      <h4>Your Result</h4>
+      <div class="circle">
+        <h1>76</h1>
+        <p>of 100</p>
+      </div>
+      <h2>Great</h2>
+      <p class="last">You scored higher than 65% of the people who have taken these tests.</p>
+      
+    </div>
+    <div id="right">
+
+      <h4>Summary</h4>
+
+      <div class="rea sum">
+        <div class="le"><img src="assets/images/icon-reaction.svg" alt=""><span>Reaction</span></div>
+        <div class="ri"><b>80</b><span>/ 100</span></div> 
+      </div>
+      <div class="mem sum">
+        <div class="le"><img src="assets/images/icon-memory.svg" alt=""><span>Memory</span></div>
+        <div class="ri"><b>92</b><span>/ 100</span></div> 
+      </div>
+      <div class="ver sum">
+        <div class="le"><img src="assets/images/icon-reaction.svg" alt=""><span>Verbal</span></div>
+        <div class="ri"><b>61</b><span>/ 100</span></div> 
+      </div>
+      <div class="vis sum">
+        <div class="le"><img src="assets/images/icon-reaction.svg" alt=""><span>Visula</span></div>
+        <div class="ri"><b>72</b><span>/ 100</span></div> 
+      </div>
+
+      <button>Continue</button>
+
+    </div>
+  </div>
+
+
+</body>
+</html>
