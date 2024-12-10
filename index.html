@@ -43,7 +43,7 @@
       border-radius: 10px;
       display: flex;
       flex-direction: row;
-      max-width: 400px;
+      max-width: 450px;
       text-align: center;
     }
     /*Partie gauche*/
@@ -57,10 +57,13 @@
       justify-content: center;
       flex-direction: column;
     }
-    #left h4{color: var(--Light-lavender); margin-bottom: 15px; font-size: 18px;}
+    #left h4{color: var(--Light-lavender); margin-bottom: 20px; font-size: 16px;}
+    #left h2{color: var(--White); margin-bottom: 8px; font-size: larger;}
+    #left .last{color: var(--White); font-size: 13px; font-weight: 200;}
+    /*Cercle*/
     #left .circle{
       background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       width: 100px;
       height: 100px;
       border-radius: 50%;
@@ -71,11 +74,10 @@
     }
     #left .circle h1{font-size: 40px; color: var(--White);} 
     #left .circle p{font-size: 13px; color: var(--Light-lavender); margin-top: -5px;}
-    #left h2{color: var(--White); margin-bottom: 5px; font-size: larger;}
-    #left .last{color: var(--White); font-size: 13px; font-weight: 200;}
-
+    /*Fin Cercle*/
     /*Partie Droite*/
     #right{
+      width: 50%;
       padding: 25px 15px;
     }
     #right h4{
@@ -83,21 +85,76 @@
       font-size: 18px;
       text-align: left;
     }
+    /*Informations*/
+    #right #infos{
+      margin-bottom: 25px;
+    }
     #right .sum{
       border-radius: 4px; 
       display: flex; 
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       flex-direction: row;
       margin-top: 10px;
-      padding: 6px;
-      gap: 20px;
+      padding: 10px 8px;
+      gap: 20%
     }
-    #right .rea{background-color: hsla(0, 100%, 67%, 0.2);}
-    #right .mem{background-color: hsla(39, 100%, 56%, 0.2);}
-    #right .ver{background-color: hsla(166, 100%, 37%, 0.2);}
-    #right .vis{background-color: hsla(234, 85%, 45%, 0.2);}
-    
+    #right .rea{background-color: hsla(0, 100%, 67%, 0.1);}
+    #right .mem{background-color: hsla(39, 100%, 56%, 0.1);}
+    #right .ver{background-color: hsla(166, 100%, 37%, 0.1);}
+    #right .vis{background-color: hsla(234, 85%, 45%, 0.1);}
+    #right .rea .le span{color: var(--Light-red);}
+    #right .mem .le span{color: var(--Orangey-yellow);}
+    #right .ver .le span{color: var(--Green-teal);}
+    #right .vis .le span{color: var(--Cobalt-blue);}
+    #right .le, .ri{
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+    }
+    #right .le span{font-size: 12px; font-weight: 700; margin-left: 5px;}
+    #right .ri b, span{font-size: 13px;}
+    #right .ri b{color: hsla(225, 21%, 15%, 0.973); padding-right: 5px; font-weight: 800;}
+    #right .ri span{color: hsla(224, 30%, 27%, 0.829); font-weight: 800;}
+    /*Button*/
+    #right button{
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--White);
+      background-color: var(--Dark-gray-blue);
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+      width: 100%;
+      letter-spacing: 1px;
+    }
+    #right button:hover{
+      background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      cursor: pointer;
+    }
+
+    /*Mobile Responsive*/
+    @media screen and (max-width: 420px){
+      #tab {
+        flex-direction: column;
+        height: 100vh;  
+      }
+      #left,#right{width: 100%;}
+      #left{border-radius: 0 0 20px 20px;}
+      #right .sum{margin-top: 20px;}
+      #right{padding: 25px 30px;}
+    }
+    @media screen and (min-height: 700px) and (max-width: 420px){
+      #left{height: 50vh;}
+      #right{margin-top: 20px;}
+      button{margin-top: 10px;}
+      #right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -117,21 +174,23 @@
 
       <h4>Summary</h4>
 
-      <div class="rea sum">
-        <div class="le"><img src="assets/images/icon-reaction.svg" alt=""><span>Reaction</span></div>
-        <div class="ri"><b>80</b><span>/ 100</span></div> 
-      </div>
-      <div class="mem sum">
-        <div class="le"><img src="assets/images/icon-memory.svg" alt=""><span>Memory</span></div>
-        <div class="ri"><b>92</b><span>/ 100</span></div> 
-      </div>
-      <div class="ver sum">
-        <div class="le"><img src="assets/images/icon-reaction.svg" alt=""><span>Verbal</span></div>
-        <div class="ri"><b>61</b><span>/ 100</span></div> 
-      </div>
-      <div class="vis sum">
-        <div class="le"><img src="assets/images/icon-reaction.svg" alt=""><span>Visula</span></div>
-        <div class="ri"><b>72</b><span>/ 100</span></div> 
+      <div id="infos">
+        <div class="rea sum">
+          <div class="le"><img src="assets/images/icon-reaction.svg" alt=""><span>Reaction</span></div>
+          <div class="ri"><b>80</b><span>/ 100</span></div> 
+        </div>
+        <div class="mem sum">
+          <div class="le"><img src="assets/images/icon-memory.svg" alt=""><span>Memory</span></div>
+          <div class="ri"><b>92</b><span>/ 100</span></div> 
+        </div>
+        <div class="ver sum">
+          <div class="le"><img src="assets/images/icon-verbal.svg" alt=""><span>Verbal</span></div>
+          <div class="ri"><b>61</b><span>/ 100</span></div> 
+        </div>
+        <div class="vis sum">
+          <div class="le"><img src="assets/images/icon-visual.svg" alt=""><span>Visual</span></div>
+          <div class="ri"><b>72</b><span>/ 100</span></div> 
+        </div>
       </div>
 
       <button>Continue</button>
